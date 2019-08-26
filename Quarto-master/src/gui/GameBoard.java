@@ -21,7 +21,7 @@ public class GameBoard extends JPanel implements MouseListener{
 	private Window main;
 	
 	public static final int width = 1600; 
-	public static final int height = 950; 
+	public static final int height = 940; 
 	
 	// background:
 	public static Color boardColor = new Color(100, 30, 0);
@@ -42,10 +42,6 @@ public class GameBoard extends JPanel implements MouseListener{
 	@Override 
 	protected void paintComponent(Graphics g){
 		
-		Rectangle r = this.getBounds();
-		int newHeight = r.height;
-		int newWidth = r.width;
-		
 		// fill the background
 		super.paintComponent(g);
 		
@@ -56,15 +52,8 @@ public class GameBoard extends JPanel implements MouseListener{
 		// Separate the tiles from the pieces 
 		g.drawLine(1100, 1000, 1100, 0);
 		
-	//	g.setColor(Color.yellow);
-	//	g.drawOval(newWidth/15, newHeight/21, (int)(newWidth/1.8), (int)(newWidth/1.8));
-		
-		// Separate the tiles from the pieces 
-	//	g.drawLine((newWidth/25)*17, 1000, (newWidth/25)*17, 0);
-		
-		// begin changing coordinates:
-	//	g.drawLine((newWidth/27)*17, 1000, (newWidth/27)*17, 0);
-	//	g.drawLine(1600, (newHeight/21), 0, (newHeight/21));
+		g.setColor(Color.yellow);
+		g.drawOval(105, 41, 890, 890);
 		
 		// draw the staged piece if there is one 
 		Platform platform = main.getPlatform();
